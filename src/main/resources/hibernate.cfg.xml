@@ -6,14 +6,14 @@
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sivge?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">root</property>
-    <mapping resource="/Usuario.hbm.xml"/>
-    <mapping resource="/Directivo.hbm.xml"/>
-    <mapping resource="/Materia.hbm.xml"/>
+    <property name="hibernate.connection.password">admin</property>
+    <mapping resource="Model/Usuario.hbm.xml"/>
+    <mapping resource="Model/Directivo.hbm.xml"/>
+    <mapping resource="Model/Materia.hbm.xml"/>
     <mapping resource="/AlumnoMateria.hbm.xml"/>
     <mapping resource="/Alumno.hbm.xml"/>
     <mapping resource="/Asistencia.hbm.xml"/>
-    <mapping resource="/Profesor.hbm.xml"/>
-    <mapping resource="/Persona.hbm.xml"/>
+    <mapping resource="Model/Profesor.hbm.xml"/>
+    <mapping resource="Model/Persona.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
