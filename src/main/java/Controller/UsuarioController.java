@@ -23,25 +23,28 @@ public class UsuarioController {
         StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
         .configure() // obtiene los valores de hibernate.cfg.xml
         .build();
-            SessionFactory sessionFactory = new MetadataSources(registry)
-            .buildMetadata().buildSessionFactory();
-            Session sesion = sessionFactory.openSession();
-        
+
+        SessionFactory sessionFactory = new MetadataSources(registry)
+        .buildMetadata().buildSessionFactory();
+        Session sesion = sessionFactory.openSession();
+
         Integer dniInt = Integer.parseInt(dni);
-        
+
         Transaction tx = sesion.beginTransaction();
-        
-        
+
+
         Persona persona = sesion.get(Persona.class, dniInt);
 //        Persona persona = (Persona) sesion.createCriteria(Persona.class)
 //                .add(Restrictions.eq("dni", dniInt)).uniqueResult();
 
+        sesion.close();
+        sessionFactory.close();
         
         try {
             if(persona!=null){
-            
+
                 String cargo = persona.getCargo();
-                
+
                 if (cargo.equalsIgnoreCase("Director")  || cargo.equalsIgnoreCase("Profesor")) {
                     /*Usuario usuario = (Usuario) sesion.createCriteria(Usuario.class)
                     .add(Restrictions.eq("persona", persona)).uniqueResult();
@@ -84,7 +87,7 @@ public class UsuarioController {
             System.out.println(e);
             return false;
         }
-        
+
         return false;
     }
     

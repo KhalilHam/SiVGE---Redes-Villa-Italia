@@ -3,7 +3,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 21/01/2019 23:56:56 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="Model.Alumno" table="Alumno" catalog="sivge" optimistic-lock="version">
+    <class name="Model.Alumno" table="Alumno" optimistic-lock="version">
         <id name="idAlumno" type="java.lang.Integer">
             <column name="id_alumno" />
             <generator class="identity" />
